@@ -7,8 +7,9 @@
 </ion-header>
 <ion-content color="dark">
   <ion-list color="dark">
-    <ion-item *ngFor="let lista of deseosService.listas" detail color="dark">
+    <ion-item *ngFor="let lista of deseosService.listas" detail color="dark" (click)="listaSeleccionada( lista )">
       <ion-label>{{ lista.titulo }}</ion-label>
+      <ion-note color="tertiary" slot="end">{{ lista.items.length }} pendientes</ion-note>
     </ion-item>
   </ion-list>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
